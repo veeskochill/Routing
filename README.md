@@ -26,13 +26,14 @@ Using gnuplot:
 
 
 TODO :
-*Cleanup data output.
 
-*Isolate functions. 
-   *Control number of nodes
-   *Control start and end node
-   *Control probability constants
+* Cleanup data output.
+
+* Isolate functions. 
+   * Control number of nodes
+   * Control start and end node
+   * Control probability constants
    
-*Search alternate paths simultaneously, stopping when one path reaches destination.
+* Search alternate paths simultaneously, stopping when one path reaches destination.
 
-*Create interactive visual 
+* Create interactive visual 
