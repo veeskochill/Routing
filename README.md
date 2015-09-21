@@ -23,3 +23,16 @@ Using gnuplot:
 >'start_end.dat' using 1:2 with points pointtype 8 lt rgb 'red' pointsize 4
 
 ![alt tag](https://raw.github.com/veeskochill/routing/master/dfs_path.png)
+
+
+TODO :
+*Cleanup data output.
+
+*Isolate functions. 
+   *Control number of nodes
+   *Control start and end node
+   *Control probability constants
+   
+*Search alternate paths simultaneously, stopping when one path reaches destination.
+
+*Create interactive visual 
