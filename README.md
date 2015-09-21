@@ -5,11 +5,8 @@ Given a set of pathways (one-way or bi-directional), what is the best route to t
 
 A set of nodes are randomly generate. A pathway between any two nodes, from node A, to node B is created with a probability
 beta*exp(-d/L/alpha), 
-
 where d is the distance between the two nodes |B-A|,
-
 L is the largest distance between any nodes,
-
 beta, and alpha are constants.
 
 
