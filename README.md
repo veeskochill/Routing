@@ -1,5 +1,5 @@
 # Routing
-Depth First Search for graph pathfinding
+Depth First Search for graph/network pathfinding
 
 Given a set of pathways (one-way or bi-directional), what is the best route to travel from an initial point to a final position when restricted to these pathways?
 
