@@ -40,15 +40,18 @@ struct node{
 
 node* dfs(node start, point end){
 
+	if(start.pos.x == end.x && start.pos.y == end.y)
+		return NULL;
+	
 	std::ofstream myfile;
 	myfile.open("best_route.dat", std::ofstream::out | std::ofstream::app);
 	//node current_edge = start;
 	//float* dot_products = (float*)malloc(num_edges*sizeof(float));
 	std::vector<float> dot_products;
 	for(int ui =0 ; ui < start.num_edges; ui++){
-		point to_dest = subtract(end, start.pos);
-		point to_next = subtract(start.edges[ui]->pos, start.pos);
-		float result_value = dot_prod(to_dest, to_next);
+		point to_dest = subtract(start.pos, end);
+		point to_next = subtract(start.pos, start.edges[ui]->pos);
+		float result_value = dot_prod(to_dest, to_next)/sqrt(dot_prod(to_dest,to_dest))/sqrt(dot_prod(to_next,to_next));
 		dot_products.push_back(result_value);
 	}
 	int ui = std::distance(dot_products.begin(),std::max_element(dot_products.begin(), dot_products.begin()+start.num_edges));
@@ -140,8 +143,6 @@ node* generate_map(){
 	myfile.close();
 	printf("start-end\n");
 
-	
-
 	printf("end\n");
 	return map;
 }
@@ -161,6 +162,12 @@ int main(){
 	point* p_end = &map[end].pos;
 	printf("%d :%f, %f\n", start, p_node->pos.x, p_node->pos.y);
 	printf("%d :%f, %f\n", end, p_end->x, p_end->y);
+	std::ofstream myfile;
+	myfile.open("start_end.dat");
+	myfile << p_node->pos.x << " " << p_node->pos.y << std::endl;
+	myfile << p_end->x << " " << p_end->y << std::endl;
+	myfile.close();
+
 
 
 	printf("JUST DOIT\n");
